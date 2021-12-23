@@ -38,21 +38,23 @@ namespace HKD_ClothesShop.Forms
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Image = global::HKD_ClothesShop.Properties.Resources.closed_sign;
-            this.btnClose.Location = new System.Drawing.Point(12, 12);
+            this.btnClose.Location = new System.Drawing.Point(16, 15);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(36, 36);
+            this.btnClose.Size = new System.Drawing.Size(48, 44);
             this.btnClose.TabIndex = 1;
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // frmNhomKhachHang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1209, 634);
+            this.ClientSize = new System.Drawing.Size(1612, 780);
             this.Controls.Add(this.btnClose);
             this.Enabled = false;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmNhomKhachHang";
             this.Text = "Form6";
             this.ResumeLayout(false);
