@@ -25,7 +25,6 @@ namespace HKD_ClothesShop.Modal
         public string MaKhachHang { get; set; }
         public string MaNhanVien { get; set; }
         public System.DateTime NgayLap { get; set; }
-        public string TinhTrang { get; set; }
         public bool Status { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

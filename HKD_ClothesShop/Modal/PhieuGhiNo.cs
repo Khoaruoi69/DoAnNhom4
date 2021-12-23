@@ -18,8 +18,6 @@ namespace HKD_ClothesShop.Modal
         public System.DateTime NgayTra { get; set; }
         public decimal SoTienTra { get; set; }
         public string SoHoaDon { get; set; }
-        public string GhiChu { get; set; }
-        public bool Status { get; set; }
     
         public virtual HoaDon HoaDon { get; set; }
     }

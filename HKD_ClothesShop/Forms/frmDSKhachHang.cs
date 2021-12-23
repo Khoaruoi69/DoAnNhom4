@@ -45,7 +45,7 @@ namespace HKD_ClothesShop.Forms
         {
             try
             {
-                QLBanHangHKDEntities db = new QLBanHangHKDEntities();
+                QLBanHangHKDEntities1 db = new QLBanHangHKDEntities1();
                 List<KhachHang> listKhachHang = db.KhachHangs.ToList();
                 BindGrid(listKhachHang);
             }

@@ -13,10 +13,10 @@ namespace HKD_ClothesShop.Modal
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class QLBanHangHKDEntities : DbContext
+    public partial class QLBanHangHKDEntities1 : DbContext
     {
-        public QLBanHangHKDEntities()
-            : base("name=QLBanHangHKDEntities")
+        public QLBanHangHKDEntities1()
+            : base("name=QLBanHangHKDEntities1")
         {
         }
     

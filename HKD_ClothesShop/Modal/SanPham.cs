@@ -29,7 +29,7 @@ namespace HKD_ClothesShop.Modal
         public byte[] AnhBiaSP { get; set; }
         public string ChatLieu { get; set; }
         public System.DateTime NgayCapNhat { get; set; }
-        public bool TrangThai { get; set; }
+        public bool Status { get; set; }
         public string MaLoaiSP { get; set; }
         public string MaThuongHieu { get; set; }
     
