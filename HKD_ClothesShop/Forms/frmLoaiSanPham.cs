@@ -98,26 +98,41 @@ namespace HKD_ClothesShop.Forms
                     LoaiSanPham st = new LoaiSanPham();
                     st.MaLoaiSP = txtMaLoai.Text;
                     st.TenLoaiSP = txtTenLoai.Text;
-               
+                    st.Status = checkStatus.Checked;
 
                     db.LoaiSanPhams.Add(st);
                     db.SaveChanges();
                     frmLoaiSanPham_Load(null, null);
                     MessageBox.Show("Thêm Loại sản phẩm thành công", "Thông báo", MessageBoxButtons.OK);
                 }
-                else
-                {
-                    LoaiSanPham st = new LoaiSanPham();
-                    st.MaLoaiSP = txtMaLoai.Text;
-                    st.TenLoaiSP = txtTenLoai.Text;
-                   
-                    db.SaveChanges();
-                    frmLoaiSanPham_Load(null, null);
-                 
-                    MessageBox.Show("Sửa thành công", "Thông báo", MessageBoxButtons.OK);
-                }
+                
             }
             
+        }
+        void edit()
+        {
+            try
+            {
+                if (kiemtra() == true)
+                {
+                    string id = txtMaLoai.Text;
+                    LoaiSanPham st = db.LoaiSanPhams.Where(p => p.MaLoaiSP == id).FirstOrDefault();
+                    if (st != null)
+                    {
+                        st.MaLoaiSP = txtMaLoai.Text;
+                        st.TenLoaiSP = txtTenLoai.Text;
+                        st.Status = checkStatus.Checked;
+                        db.SaveChanges();
+                        frmLoaiSanPham_Load(null, null);
+                        MessageBox.Show($"Sửa loại sản phẩm mã {txtMaLoai.Text} thành công", "Thông báo", MessageBoxButtons.OK);
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("đã xãy ra lỗi", "thông báo", MessageBoxButtons.OK);
+            }
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -132,8 +147,7 @@ namespace HKD_ClothesShop.Forms
             {
                 txtMaLoai.Text = dgvSanPham.Rows[num].Cells[0].Value.ToString();
                 txtTenLoai.Text = dgvSanPham.Rows[num].Cells[1].Value.ToString();
-                checkStatus.Text = dgvSanPham.Rows[num].Cells[2].Value.ToString();
-
+                txtStatus.Text = dgvSanPham.Rows[num].Cells[2].Value.ToString();
             }
         }
 
@@ -149,6 +163,17 @@ namespace HKD_ClothesShop.Forms
             {
                 this.Close();
             }
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            edit();
+
+        }
+
+        private void checkStatus_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

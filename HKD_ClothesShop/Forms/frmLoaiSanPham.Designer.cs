@@ -43,6 +43,8 @@ namespace HKD_ClothesShop.Forms
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnSua = new System.Windows.Forms.Button();
+            this.txtStatus = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSanPham)).BeginInit();
             this.SuspendLayout();
@@ -54,7 +56,7 @@ namespace HKD_ClothesShop.Forms
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Image = global::HKD_ClothesShop.Properties.Resources.closed_sign;
             this.btnClose.Location = new System.Drawing.Point(16, 15);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(48, 44);
             this.btnClose.TabIndex = 1;
@@ -63,6 +65,8 @@ namespace HKD_ClothesShop.Forms
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtStatus);
+            this.groupBox1.Controls.Add(this.btnSua);
             this.groupBox1.Controls.Add(this.btnExit);
             this.groupBox1.Controls.Add(this.btnCreat);
             this.groupBox1.Controls.Add(this.checkStatus);
@@ -72,9 +76,9 @@ namespace HKD_ClothesShop.Forms
             this.groupBox1.Controls.Add(this.txtMaLoai);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(13, 142);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(499, 320);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
@@ -83,7 +87,7 @@ namespace HKD_ClothesShop.Forms
             // btnExit
             // 
             this.btnExit.Location = new System.Drawing.Point(340, 220);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(4);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(136, 59);
             this.btnExit.TabIndex = 21;
@@ -93,25 +97,26 @@ namespace HKD_ClothesShop.Forms
             // 
             // btnCreat
             // 
-            this.btnCreat.Location = new System.Drawing.Point(169, 220);
-            this.btnCreat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCreat.Location = new System.Drawing.Point(8, 220);
+            this.btnCreat.Margin = new System.Windows.Forms.Padding(4);
             this.btnCreat.Name = "btnCreat";
             this.btnCreat.Size = new System.Drawing.Size(147, 59);
             this.btnCreat.TabIndex = 20;
-            this.btnCreat.Text = "Thêm/ Sửa";
+            this.btnCreat.Text = "Thêm";
             this.btnCreat.UseVisualStyleBackColor = true;
             this.btnCreat.Click += new System.EventHandler(this.btnCreat_Click);
             // 
             // checkStatus
             // 
             this.checkStatus.AutoSize = true;
-            this.checkStatus.Location = new System.Drawing.Point(377, 170);
-            this.checkStatus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkStatus.Location = new System.Drawing.Point(205, 137);
+            this.checkStatus.Margin = new System.Windows.Forms.Padding(4);
             this.checkStatus.Name = "checkStatus";
-            this.checkStatus.Size = new System.Drawing.Size(96, 29);
+            this.checkStatus.Size = new System.Drawing.Size(132, 29);
             this.checkStatus.TabIndex = 16;
-            this.checkStatus.Text = "Status";
+            this.checkStatus.Text = "Trạng thái";
             this.checkStatus.UseVisualStyleBackColor = true;
+            this.checkStatus.CheckedChanged += new System.EventHandler(this.checkStatus_CheckedChanged);
             // 
             // label2
             // 
@@ -136,7 +141,7 @@ namespace HKD_ClothesShop.Forms
             // txtTenLoai
             // 
             this.txtTenLoai.Location = new System.Drawing.Point(205, 86);
-            this.txtTenLoai.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTenLoai.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenLoai.Name = "txtTenLoai";
             this.txtTenLoai.Size = new System.Drawing.Size(269, 30);
             this.txtTenLoai.TabIndex = 1;
@@ -145,20 +150,21 @@ namespace HKD_ClothesShop.Forms
             // txtMaLoai
             // 
             this.txtMaLoai.Location = new System.Drawing.Point(205, 38);
-            this.txtMaLoai.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMaLoai.Margin = new System.Windows.Forms.Padding(4);
             this.txtMaLoai.Name = "txtMaLoai";
             this.txtMaLoai.Size = new System.Drawing.Size(269, 30);
             this.txtMaLoai.TabIndex = 0;
             // 
             // dgvSanPham
             // 
+            this.dgvSanPham.AllowUserToAddRows = false;
             this.dgvSanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSanPham.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
             this.Column3});
             this.dgvSanPham.Location = new System.Drawing.Point(544, 142);
-            this.dgvSanPham.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvSanPham.Margin = new System.Windows.Forms.Padding(4);
             this.dgvSanPham.Name = "dgvSanPham";
             this.dgvSanPham.RowHeadersWidth = 51;
             this.dgvSanPham.Size = new System.Drawing.Size(802, 602);
@@ -193,10 +199,28 @@ namespace HKD_ClothesShop.Forms
             this.label3.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.label3.Location = new System.Drawing.Point(386, 43);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(495, 39);
+            this.label3.Size = new System.Drawing.Size(476, 38);
             this.label3.TabIndex = 7;
             this.label3.Text = "DANH SÁCH LOẠI SẢN PHẨM";
             this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // btnSua
+            // 
+            this.btnSua.Location = new System.Drawing.Point(176, 220);
+            this.btnSua.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(147, 59);
+            this.btnSua.TabIndex = 22;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            // 
+            // txtStatus
+            // 
+            this.txtStatus.Location = new System.Drawing.Point(331, 137);
+            this.txtStatus.Name = "txtStatus";
+            this.txtStatus.Size = new System.Drawing.Size(145, 30);
+            this.txtStatus.TabIndex = 23;
             // 
             // frmLoaiSanPham
             // 
@@ -209,7 +233,7 @@ namespace HKD_ClothesShop.Forms
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnClose);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmLoaiSanPham";
             this.Text = "Form8";
             this.Load += new System.EventHandler(this.frmLoaiSanPham_Load);
@@ -237,5 +261,7 @@ namespace HKD_ClothesShop.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnSua;
+        private System.Windows.Forms.TextBox txtStatus;
     }
 }
