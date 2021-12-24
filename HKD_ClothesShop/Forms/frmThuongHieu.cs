@@ -15,6 +15,7 @@ namespace HKD_ClothesShop.Forms
     public partial class frmThuongHieu : Form
     {
         QLBanHangHKDEntities1 db = new QLBanHangHKDEntities1();
+        
         public frmThuongHieu()
         {
             InitializeComponent();
@@ -50,6 +51,11 @@ namespace HKD_ClothesShop.Forms
                 dgvThuongHieu.Rows[index].Cells[1].Value = item.TenThuongHieu;
                 dgvThuongHieu.Rows[index].Cells[2].Value = item.DiaChi;
                 dgvThuongHieu.Rows[index].Cells[3].Value = item.DienThoai;
+                dgvThuongHieu.Rows[index].Cells[4].Value = item.Status;
+               
+                dgvThuongHieu.Rows[index].Cells[5].Value = item.Logo;
+
+
                 if (item.Status == true)
                 {
                     dgvThuongHieu.Rows[index].Cells[4].Value = "Hết hàng";
@@ -65,10 +71,12 @@ namespace HKD_ClothesShop.Forms
             if (txtMaTH.Text == "" || txtTenTH.Text == ""|| txtDiaChi.Text==""|| txtSDT.Text=="")
             {
                 MessageBox.Show("Hãy nhập đầy đủ thông tin thương hiệu", "Thông báo", MessageBoxButtons.OK);
+                return false;
             }
             if (txtMaTH.TextLength != 3)
             {
                 MessageBox.Show("Mã thương hiệu phải 3 kí tự", "Thông báo", MessageBoxButtons.OK);
+                return false;
             }
             return true;
 
@@ -97,7 +105,8 @@ namespace HKD_ClothesShop.Forms
                     st.DienThoai = txtSDT.Text;
                     st.DiaChi = txtDiaChi.Text;
                     st.Status = checkStatus.Checked;
-               
+                    var hinhanh = (byte[])new ImageConverter().ConvertTo(pictureBox1.Image, typeof(byte[]));
+                    st.Logo = hinhanh;
 
 
                     db.ThuongHieux.Add(st);
@@ -123,6 +132,9 @@ namespace HKD_ClothesShop.Forms
                         st.TenThuongHieu = txtTenTH.Text;
                         st.DienThoai = txtSDT.Text;
                         st.DiaChi = txtDiaChi.Text;
+                        st.Status = checkStatus.Checked;
+                        var hinhanh = (byte[])new ImageConverter().ConvertTo(pictureBox1.Image, typeof(byte[]));
+                        st.Logo = hinhanh;
                         db.SaveChanges();
                         frmThuongHieu_Load(null, null);
                         MessageBox.Show($"Sửa thương hiệu sản phẩm mã {txtMaTH.Text} thành công", "Thông báo", MessageBoxButtons.OK);
@@ -135,7 +147,7 @@ namespace HKD_ClothesShop.Forms
                 MessageBox.Show("đã xãy ra lỗi", "thông báo", MessageBoxButtons.OK);
             }
         }
-
+        
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
@@ -151,7 +163,8 @@ namespace HKD_ClothesShop.Forms
                 txtTenTH.Text = dgvThuongHieu.Rows[num].Cells[1].Value.ToString();
                 txtDiaChi.Text = dgvThuongHieu.Rows[num].Cells[2].Value.ToString();
                 txtSDT.Text = dgvThuongHieu.Rows[num].Cells[3].Value.ToString();
-
+                Image mds = (Bitmap)((new ImageConverter()).ConvertFrom(dgvThuongHieu.Rows[num].Cells[5].Value));
+                pictureBox1.Image = mds;
             }
         }
 
@@ -168,9 +181,18 @@ namespace HKD_ClothesShop.Forms
             openFile.RestoreDirectory = true;
             if (openFile.ShowDialog() == DialogResult.OK)
             {
-                
+                textBox1.Text = openFile.FileName;
                 pictureBox1.ImageLocation = openFile.FileName;
             }
+        }
+        private byte[] converImgToByte()
+        {
+            FileStream fs;
+            fs = new FileStream(textBox1.Text, FileMode.Open, FileAccess.Read);
+            byte[] picbyte = new byte[fs.Length];
+            fs.Read(picbyte, 0, System.Convert.ToInt32(fs.Length));
+            fs.Close();
+            return picbyte;
         }
 
         private void btnXoalogo_Click(object sender, EventArgs e)

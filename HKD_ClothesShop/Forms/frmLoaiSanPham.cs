@@ -69,10 +69,13 @@ namespace HKD_ClothesShop.Forms
             if (txtMaLoai.Text == "" || txtTenLoai.Text == "")
             {
                 MessageBox.Show("Hãy nhập đầy đủ thông tin loại sản phẩm", "Thông báo", MessageBoxButtons.OK);
+                return false;
             }
+            
             if (txtMaLoai.TextLength != 4)
             {
                 MessageBox.Show("Mã loại phải 4 kí tự", "Thông báo", MessageBoxButtons.OK);
+                return false;
             }
             return true;
             
@@ -105,7 +108,6 @@ namespace HKD_ClothesShop.Forms
                     frmLoaiSanPham_Load(null, null);
                     MessageBox.Show("Thêm Loại sản phẩm thành công", "Thông báo", MessageBoxButtons.OK);
                 }
-                
             }
             
         }
