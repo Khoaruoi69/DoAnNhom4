@@ -150,6 +150,15 @@ namespace HKD_ClothesShop.Forms
                 txtMaLoai.Text = dgvSanPham.Rows[num].Cells[0].Value.ToString();
                 txtTenLoai.Text = dgvSanPham.Rows[num].Cells[1].Value.ToString();
                 txtStatus.Text = dgvSanPham.Rows[num].Cells[2].Value.ToString();
+
+                if(dgvSanPham.Rows[num].Cells[2].Value.ToString() == "Hết hàng")
+                {
+                    checkStatus.Checked = true;
+                }
+                else
+                {
+                    checkStatus.Checked = false;
+                }
             }
         }
 
@@ -160,7 +169,7 @@ namespace HKD_ClothesShop.Forms
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Bạn muốn thoát à ??", "Thông báo", MessageBoxButtons.YesNo);
+            DialogResult dr = MessageBox.Show("Bạn có muốn thoát ??", "Thông báo", MessageBoxButtons.YesNo);
             if (dr == DialogResult.Yes)
             {
                 this.Close();

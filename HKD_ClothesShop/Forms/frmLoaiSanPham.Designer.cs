@@ -45,6 +45,7 @@ namespace HKD_ClothesShop.Forms
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSanPham)).BeginInit();
             this.SuspendLayout();
@@ -65,6 +66,7 @@ namespace HKD_ClothesShop.Forms
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtStatus);
             this.groupBox1.Controls.Add(this.btnSua);
             this.groupBox1.Controls.Add(this.btnExit);
@@ -79,21 +81,21 @@ namespace HKD_ClothesShop.Forms
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(499, 320);
+            this.groupBox1.Size = new System.Drawing.Size(499, 404);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Loại sản phẩm";
             // 
             // txtStatus
             // 
-            this.txtStatus.Location = new System.Drawing.Point(205, 173);
+            this.txtStatus.Location = new System.Drawing.Point(205, 143);
             this.txtStatus.Name = "txtStatus";
             this.txtStatus.Size = new System.Drawing.Size(269, 30);
             this.txtStatus.TabIndex = 23;
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(176, 220);
+            this.btnSua.Location = new System.Drawing.Point(177, 321);
             this.btnSua.Margin = new System.Windows.Forms.Padding(4);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(147, 59);
@@ -104,7 +106,7 @@ namespace HKD_ClothesShop.Forms
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(340, 220);
+            this.btnExit.Location = new System.Drawing.Point(338, 321);
             this.btnExit.Margin = new System.Windows.Forms.Padding(4);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(136, 59);
@@ -115,7 +117,7 @@ namespace HKD_ClothesShop.Forms
             // 
             // btnCreat
             // 
-            this.btnCreat.Location = new System.Drawing.Point(8, 220);
+            this.btnCreat.Location = new System.Drawing.Point(8, 321);
             this.btnCreat.Margin = new System.Windows.Forms.Padding(4);
             this.btnCreat.Name = "btnCreat";
             this.btnCreat.Size = new System.Drawing.Size(147, 59);
@@ -127,19 +129,19 @@ namespace HKD_ClothesShop.Forms
             // checkStatus
             // 
             this.checkStatus.AutoSize = true;
-            this.checkStatus.Location = new System.Drawing.Point(205, 137);
+            this.checkStatus.Location = new System.Drawing.Point(342, 195);
             this.checkStatus.Margin = new System.Windows.Forms.Padding(4);
             this.checkStatus.Name = "checkStatus";
-            this.checkStatus.Size = new System.Drawing.Size(132, 29);
+            this.checkStatus.Size = new System.Drawing.Size(121, 29);
             this.checkStatus.TabIndex = 16;
-            this.checkStatus.Text = "Trạng thái";
+            this.checkStatus.Text = "Hết hàng";
             this.checkStatus.UseVisualStyleBackColor = true;
             this.checkStatus.CheckedChanged += new System.EventHandler(this.checkStatus_CheckedChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 86);
+            this.label2.Location = new System.Drawing.Point(21, 91);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(90, 25);
@@ -149,7 +151,7 @@ namespace HKD_ClothesShop.Forms
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 38);
+            this.label1.Location = new System.Drawing.Point(21, 43);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(82, 25);
@@ -222,6 +224,15 @@ namespace HKD_ClothesShop.Forms
             this.label3.Text = "DANH SÁCH LOẠI SẢN PHẨM";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(21, 148);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(110, 25);
+            this.label4.TabIndex = 24;
+            this.label4.Text = "Trạng thái";
+            // 
             // frmLoaiSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -263,5 +274,6 @@ namespace HKD_ClothesShop.Forms
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.TextBox txtStatus;
+        private System.Windows.Forms.Label label4;
     }
 }

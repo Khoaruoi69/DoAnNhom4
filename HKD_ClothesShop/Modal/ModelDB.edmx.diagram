@@ -5,7 +5,7 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="0f6c837551b5437893ef54bb943e943f" Name="Diagram1">
-        <EntityTypeShape EntityType="QLBanHangHKDModel.ChiTietHoaDon" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBanHangHKDModel.ChiTietHoaDon" Width="1.5" PointX="6.375" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="QLBanHangHKDModel.DacDiem" Width="1.5" PointX="3" PointY="7.625" IsExpanded="true" />
         <EntityTypeShape EntityType="QLBanHangHKDModel.DacDiem_SanPham" Width="1.5" PointX="5.25" PointY="0.875" IsExpanded="true" />
         <EntityTypeShape EntityType="QLBanHangHKDModel.HoaDon" Width="1.5" PointX="3" PointY="12.125" IsExpanded="true" />
@@ -15,7 +15,7 @@
         <EntityTypeShape EntityType="QLBanHangHKDModel.PhanQuyen" Width="1.5" PointX="5.75" PointY="7.5" IsExpanded="true" />
         <EntityTypeShape EntityType="QLBanHangHKDModel.PhieuGhiNo" Width="1.5" PointX="5.25" PointY="12.5" IsExpanded="true" />
         <EntityTypeShape EntityType="QLBanHangHKDModel.SanPham" Width="1.5" PointX="3" PointY="3" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBanHangHKDModel.sysdiagram" Width="1.5" PointX="7.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBanHangHKDModel.sysdiagram" Width="1.5" PointX="8.75" PointY="1.25" IsExpanded="true" />
         <EntityTypeShape EntityType="QLBanHangHKDModel.ThongTinTaiKhoan" Width="1.5" PointX="8" PointY="7.125" IsExpanded="true" />
         <EntityTypeShape EntityType="QLBanHangHKDModel.ThuongHieu" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="QLBanHangHKDModel.FK_ChiTietHoaDon_HoaDon" ManuallyRouted="false" />

@@ -52,17 +52,17 @@ namespace HKD_ClothesShop.Forms
                 dgvThuongHieu.Rows[index].Cells[2].Value = item.DiaChi;
                 dgvThuongHieu.Rows[index].Cells[3].Value = item.DienThoai;
                 dgvThuongHieu.Rows[index].Cells[4].Value = item.Status;
-               
                 dgvThuongHieu.Rows[index].Cells[5].Value = item.Logo;
+              //  dgvThuongHieu.Rows[index].Cells[5].Value = (Image)((new ImageConverter()).ConvertFrom(item.Logo));
 
 
                 if (item.Status == true)
                 {
-                    dgvThuongHieu.Rows[index].Cells[4].Value = "Hết hàng";
+                    dgvThuongHieu.Rows[index].Cells[4].Value = "Còn sử dụng";
                 }
                 else
                 {
-                    dgvThuongHieu.Rows[index].Cells[4].Value = "Còn hàng";
+                    dgvThuongHieu.Rows[index].Cells[4].Value = "Hết sử dụng";
                 }
             }
         }
@@ -107,7 +107,6 @@ namespace HKD_ClothesShop.Forms
                     st.Status = checkStatus.Checked;
                     var hinhanh = (byte[])new ImageConverter().ConvertTo(pictureBox1.Image, typeof(byte[]));
                     st.Logo = hinhanh;
-
 
                     db.ThuongHieux.Add(st);
                     db.SaveChanges();
@@ -163,8 +162,17 @@ namespace HKD_ClothesShop.Forms
                 txtTenTH.Text = dgvThuongHieu.Rows[num].Cells[1].Value.ToString();
                 txtDiaChi.Text = dgvThuongHieu.Rows[num].Cells[2].Value.ToString();
                 txtSDT.Text = dgvThuongHieu.Rows[num].Cells[3].Value.ToString();
+                textStatus.Text = dgvThuongHieu.Rows[num].Cells[4].Value.ToString();
                 Image mds = (Bitmap)((new ImageConverter()).ConvertFrom(dgvThuongHieu.Rows[num].Cells[5].Value));
                 pictureBox1.Image = mds;
+                if(dgvThuongHieu.Rows[num].Cells[4].Value.ToString() == "Hết sử dụng")
+                {
+                    checkStatus.Checked = true;
+                }
+                else
+                {
+                    checkStatus.Checked = false;
+                }
             }
         }
 
@@ -181,23 +189,27 @@ namespace HKD_ClothesShop.Forms
             openFile.RestoreDirectory = true;
             if (openFile.ShowDialog() == DialogResult.OK)
             {
-                textBox1.Text = openFile.FileName;
                 pictureBox1.ImageLocation = openFile.FileName;
             }
-        }
-        private byte[] converImgToByte()
-        {
-            FileStream fs;
-            fs = new FileStream(textBox1.Text, FileMode.Open, FileAccess.Read);
-            byte[] picbyte = new byte[fs.Length];
-            fs.Read(picbyte, 0, System.Convert.ToInt32(fs.Length));
-            fs.Close();
-            return picbyte;
         }
 
         private void btnXoalogo_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            edit();
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Bạn có muốn thoát ??", "Thông báo", MessageBoxButtons.YesNo);
+            if (dr == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
     }
 }
