@@ -33,6 +33,17 @@ namespace HKD_ClothesShop.Forms
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.btnThem = new System.Windows.Forms.Button();
             this.dgvTTSanPham = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label10 = new System.Windows.Forms.Label();
             this.btnSua = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -49,27 +60,17 @@ namespace HKD_ClothesShop.Forms
             this.btnChonLogo = new System.Windows.Forms.Button();
             this.txtMaSP = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtTenSP = new System.Windows.Forms.TextBox();
-            this.txtDVT = new System.Windows.Forms.TextBox();
-            this.txtDonGia = new System.Windows.Forms.TextBox();
-            this.txtChatLieu = new System.Windows.Forms.TextBox();
-            this.txtStatus = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.cmbMaLoai = new System.Windows.Forms.ComboBox();
-            this.cmbMaTH = new System.Windows.Forms.ComboBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.txtMota = new System.Windows.Forms.TextBox();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label11 = new System.Windows.Forms.Label();
+            this.cmbMaTH = new System.Windows.Forms.ComboBox();
+            this.cmbMaLoai = new System.Windows.Forms.ComboBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.txtStatus = new System.Windows.Forms.TextBox();
+            this.txtChatLieu = new System.Windows.Forms.TextBox();
+            this.txtDonGia = new System.Windows.Forms.TextBox();
+            this.txtDVT = new System.Windows.Forms.TextBox();
+            this.txtTenSP = new System.Windows.Forms.TextBox();
+            this.btnThoat = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTTSanPham)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -82,7 +83,7 @@ namespace HKD_ClothesShop.Forms
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Image = global::HKD_ClothesShop.Properties.Resources.closed_sign;
             this.btnClose.Location = new System.Drawing.Point(16, 15);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(48, 44);
             this.btnClose.TabIndex = 1;
@@ -124,6 +125,83 @@ namespace HKD_ClothesShop.Forms
             this.dgvTTSanPham.TabIndex = 31;
             this.dgvTTSanPham.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTTSanPham_CellContentClick);
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Mã sản phẩm";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 125;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Mã loại sản phẩm";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 125;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Mã thương hiệu";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 125;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Tên sản phẩm";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 125;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Đơn vị tính";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 125;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Đơn giá";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            this.Column6.Width = 125;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Chất liệu";
+            this.Column7.MinimumWidth = 6;
+            this.Column7.Name = "Column7";
+            this.Column7.Width = 125;
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Ngày cập nhập";
+            this.Column8.MinimumWidth = 6;
+            this.Column8.Name = "Column8";
+            this.Column8.Width = 125;
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "Mô tả";
+            this.Column9.MinimumWidth = 6;
+            this.Column9.Name = "Column9";
+            this.Column9.Width = 125;
+            // 
+            // Column10
+            // 
+            this.Column10.HeaderText = "Trạng thái";
+            this.Column10.MinimumWidth = 6;
+            this.Column10.Name = "Column10";
+            this.Column10.Width = 125;
+            // 
+            // Column11
+            // 
+            this.Column11.HeaderText = "Ảnh bìa";
+            this.Column11.MinimumWidth = 6;
+            this.Column11.Name = "Column11";
+            this.Column11.Width = 125;
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -131,7 +209,7 @@ namespace HKD_ClothesShop.Forms
             this.label10.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.label10.Location = new System.Drawing.Point(548, 11);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(426, 39);
+            this.label10.Size = new System.Drawing.Size(411, 38);
             this.label10.TabIndex = 32;
             this.label10.Text = "DANH SÁCH SẢN PHẨM";
             // 
@@ -315,45 +393,41 @@ namespace HKD_ClothesShop.Forms
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Nhập thông tin sản phẩm";
             // 
-            // txtTenSP
+            // txtMota
             // 
-            this.txtTenSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenSP.Location = new System.Drawing.Point(200, 145);
-            this.txtTenSP.Name = "txtTenSP";
-            this.txtTenSP.Size = new System.Drawing.Size(195, 27);
-            this.txtTenSP.TabIndex = 33;
+            this.txtMota.Location = new System.Drawing.Point(199, 284);
+            this.txtMota.Name = "txtMota";
+            this.txtMota.Size = new System.Drawing.Size(195, 30);
+            this.txtMota.TabIndex = 43;
+            this.txtMota.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // txtDVT
+            // label11
             // 
-            this.txtDVT.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDVT.Location = new System.Drawing.Point(200, 178);
-            this.txtDVT.Name = "txtDVT";
-            this.txtDVT.Size = new System.Drawing.Size(195, 27);
-            this.txtDVT.TabIndex = 34;
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(9, 291);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(56, 20);
+            this.label11.TabIndex = 42;
+            this.label11.Text = "Mô tả";
             // 
-            // txtDonGia
+            // cmbMaTH
             // 
-            this.txtDonGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDonGia.Location = new System.Drawing.Point(199, 211);
-            this.txtDonGia.Name = "txtDonGia";
-            this.txtDonGia.Size = new System.Drawing.Size(195, 27);
-            this.txtDonGia.TabIndex = 35;
+            this.cmbMaTH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbMaTH.FormattingEnabled = true;
+            this.cmbMaTH.Location = new System.Drawing.Point(199, 111);
+            this.cmbMaTH.Name = "cmbMaTH";
+            this.cmbMaTH.Size = new System.Drawing.Size(195, 28);
+            this.cmbMaTH.TabIndex = 41;
             // 
-            // txtChatLieu
+            // cmbMaLoai
             // 
-            this.txtChatLieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtChatLieu.Location = new System.Drawing.Point(199, 248);
-            this.txtChatLieu.Name = "txtChatLieu";
-            this.txtChatLieu.Size = new System.Drawing.Size(195, 27);
-            this.txtChatLieu.TabIndex = 36;
-            // 
-            // txtStatus
-            // 
-            this.txtStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStatus.Location = new System.Drawing.Point(200, 363);
-            this.txtStatus.Name = "txtStatus";
-            this.txtStatus.Size = new System.Drawing.Size(195, 27);
-            this.txtStatus.TabIndex = 38;
+            this.cmbMaLoai.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbMaLoai.FormattingEnabled = true;
+            this.cmbMaLoai.Location = new System.Drawing.Point(200, 77);
+            this.cmbMaLoai.Name = "cmbMaLoai";
+            this.cmbMaLoai.Size = new System.Drawing.Size(195, 28);
+            this.cmbMaLoai.TabIndex = 40;
             // 
             // dateTimePicker1
             // 
@@ -367,124 +441,63 @@ namespace HKD_ClothesShop.Forms
             this.dateTimePicker1.Size = new System.Drawing.Size(195, 30);
             this.dateTimePicker1.TabIndex = 39;
             // 
-            // cmbMaLoai
+            // txtStatus
             // 
-            this.cmbMaLoai.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbMaLoai.FormattingEnabled = true;
-            this.cmbMaLoai.Location = new System.Drawing.Point(200, 77);
-            this.cmbMaLoai.Name = "cmbMaLoai";
-            this.cmbMaLoai.Size = new System.Drawing.Size(195, 28);
-            this.cmbMaLoai.TabIndex = 40;
+            this.txtStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStatus.Location = new System.Drawing.Point(200, 363);
+            this.txtStatus.Name = "txtStatus";
+            this.txtStatus.Size = new System.Drawing.Size(195, 27);
+            this.txtStatus.TabIndex = 38;
             // 
-            // cmbMaTH
+            // txtChatLieu
             // 
-            this.cmbMaTH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbMaTH.FormattingEnabled = true;
-            this.cmbMaTH.Location = new System.Drawing.Point(199, 111);
-            this.cmbMaTH.Name = "cmbMaTH";
-            this.cmbMaTH.Size = new System.Drawing.Size(195, 28);
-            this.cmbMaTH.TabIndex = 41;
+            this.txtChatLieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtChatLieu.Location = new System.Drawing.Point(199, 248);
+            this.txtChatLieu.Name = "txtChatLieu";
+            this.txtChatLieu.Size = new System.Drawing.Size(195, 27);
+            this.txtChatLieu.TabIndex = 36;
             // 
-            // label11
+            // txtDonGia
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(9, 291);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(56, 20);
-            this.label11.TabIndex = 42;
-            this.label11.Text = "Mô tả";
+            this.txtDonGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDonGia.Location = new System.Drawing.Point(199, 211);
+            this.txtDonGia.Name = "txtDonGia";
+            this.txtDonGia.Size = new System.Drawing.Size(195, 27);
+            this.txtDonGia.TabIndex = 35;
             // 
-            // txtMota
+            // txtDVT
             // 
-            this.txtMota.Location = new System.Drawing.Point(199, 284);
-            this.txtMota.Name = "txtMota";
-            this.txtMota.Size = new System.Drawing.Size(195, 30);
-            this.txtMota.TabIndex = 43;
-            this.txtMota.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtDVT.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDVT.Location = new System.Drawing.Point(200, 178);
+            this.txtDVT.Name = "txtDVT";
+            this.txtDVT.Size = new System.Drawing.Size(195, 27);
+            this.txtDVT.TabIndex = 34;
             // 
-            // Column1
+            // txtTenSP
             // 
-            this.Column1.HeaderText = "Mã sản phẩm";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 125;
+            this.txtTenSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenSP.Location = new System.Drawing.Point(200, 145);
+            this.txtTenSP.Name = "txtTenSP";
+            this.txtTenSP.Size = new System.Drawing.Size(195, 27);
+            this.txtTenSP.TabIndex = 33;
             // 
-            // Column2
+            // btnThoat
             // 
-            this.Column2.HeaderText = "Mã loại sản phẩm";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 125;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Mã thương hiệu";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 125;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Tên sản phẩm";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 125;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Đơn vị tính";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 125;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Đơn giá";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 125;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Chất liệu";
-            this.Column7.MinimumWidth = 6;
-            this.Column7.Name = "Column7";
-            this.Column7.Width = 125;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Ngày cập nhập";
-            this.Column8.MinimumWidth = 6;
-            this.Column8.Name = "Column8";
-            this.Column8.Width = 125;
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "Mô tả";
-            this.Column9.MinimumWidth = 6;
-            this.Column9.Name = "Column9";
-            this.Column9.Width = 125;
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "Trạng thái";
-            this.Column10.MinimumWidth = 6;
-            this.Column10.Name = "Column10";
-            this.Column10.Width = 125;
-            // 
-            // Column11
-            // 
-            this.Column11.HeaderText = "Ảnh bìa";
-            this.Column11.MinimumWidth = 6;
-            this.Column11.Name = "Column11";
-            this.Column11.Width = 125;
+            this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThoat.Location = new System.Drawing.Point(796, 709);
+            this.btnThoat.Margin = new System.Windows.Forms.Padding(4);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(125, 58);
+            this.btnThoat.TabIndex = 34;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.UseVisualStyleBackColor = true;
             // 
             // frmDSSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1763, 780);
+            this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.dgvTTSanPham);
@@ -492,7 +505,7 @@ namespace HKD_ClothesShop.Forms
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnClose);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmDSSanPham";
             this.Text = "Form7";
             this.Load += new System.EventHandler(this.frmDSSanPham_Load);
@@ -548,5 +561,6 @@ namespace HKD_ClothesShop.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
+        private System.Windows.Forms.Button btnThoat;
     }
 }

@@ -43,11 +43,11 @@ namespace HKD_ClothesShop.Forms
 
                 if (item.Status == true)
                 {
-                    dgvTTSanPham.Rows[index].Cells[9].Value = "Còn sử dụng";
+                    dgvTTSanPham.Rows[index].Cells[9].Value = "Hết sử dụng";
                 }
                 else
                 {
-                    dgvTTSanPham.Rows[index].Cells[9].Value = "Hết sử dụng";
+                    dgvTTSanPham.Rows[index].Cells[9].Value = "Còn sử dụng";
                 }
             }
         }
@@ -117,22 +117,24 @@ namespace HKD_ClothesShop.Forms
 
                     SanPham st = new SanPham();
                     st.MaSanPham = txtMaSP.Text;
-                    st.MaLoaiSP = cmbMaTH.Text;
+                    st.MaLoaiSP = cmbMaLoai.Text;
                     st.MaThuongHieu = cmbMaTH.Text;
                     st.TenSanPham = txtTenSP.Text;
                     st.DonViTinh = txtDVT.Text;
                     st.DonGia = Convert.ToDecimal(txtDonGia.Text);
                     ///////////////////////////////
                     ///
+                    /*
                     System.Globalization.CultureInfo customCulture = new System.Globalization.CultureInfo("en-US", true);
                     customCulture.DateTimeFormat.ShortDatePattern = "yyyy-MM-dd";
                     System.Threading.Thread.CurrentThread.CurrentCulture = customCulture;
                     System.Threading.Thread.CurrentThread.CurrentUICulture = customCulture;
-
                     dateTimePicker1.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
                     string v = dateTimePicker1.Value.ToString("yyyy/MM/dd");
                     st.NgayCapNhat = System.Convert.ToDateTime(DateTime.Now.ToString(v));
+                    */
                     //////////////////////////////
+                    st.NgayCapNhat = dateTimePicker1.Value;
                     st.MoTa = txtMota.Text;
                     st.ChatLieu = txtChatLieu.Text;
                     st.Status = checkStatus.Checked;
@@ -160,11 +162,23 @@ namespace HKD_ClothesShop.Forms
                     if (st != null)
                     {
                         st.MaSanPham = txtMaSP.Text;
-                        st.MaLoaiSP = cmbMaTH.Text;
+                        st.MaLoaiSP = cmbMaLoai.Text;
                         st.MaThuongHieu = cmbMaTH.Text;
                         st.TenSanPham = txtTenSP.Text;
                         st.DonViTinh = txtDVT.Text;
                         st.DonGia = Convert.ToDecimal(txtDonGia.Text);
+                        ///////////////////////////////
+                        ///
+                        /*
+                        System.Globalization.CultureInfo customCulture = new System.Globalization.CultureInfo("en-US", true);
+                        customCulture.DateTimeFormat.ShortDatePattern = "yyyy-MM-dd";
+                        System.Threading.Thread.CurrentThread.CurrentCulture = customCulture;
+                        System.Threading.Thread.CurrentThread.CurrentUICulture = customCulture;
+                        dateTimePicker1.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
+                        string v = dateTimePicker1.Value.ToString("yyyy/MM/dd");
+                        st.NgayCapNhat = System.Convert.ToDateTime(DateTime.Now.ToString(v));
+                        */
+                        //////////////////////////
                         st.NgayCapNhat = dateTimePicker1.Value;
                         st.MoTa = txtMota.Text;
                         st.ChatLieu = txtChatLieu.Text;
@@ -190,7 +204,30 @@ namespace HKD_ClothesShop.Forms
 
         private void dgvTTSanPham_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            int num = e.RowIndex;
+            if (dgvTTSanPham.Rows.Count > 0)
+            {
+                txtMaSP.Text = dgvTTSanPham.Rows[num].Cells[0].Value.ToString();
+                cmbMaLoai.Text = dgvTTSanPham.Rows[num].Cells[1].Value.ToString();
+                cmbMaTH.Text = dgvTTSanPham.Rows[num].Cells[2].Value.ToString();
+                txtTenSP.Text = dgvTTSanPham.Rows[num].Cells[3].Value.ToString();
+                txtDVT.Text = dgvTTSanPham.Rows[num].Cells[4].Value.ToString();
+                txtDonGia.Text = dgvTTSanPham.Rows[num].Cells[5].Value.ToString();
+                txtChatLieu.Text = dgvTTSanPham.Rows[num].Cells[6].Value.ToString();
+                dateTimePicker1.Text = dgvTTSanPham.Rows[num].Cells[7].Value.ToString();
+                txtMota.Text = dgvTTSanPham.Rows[num].Cells[8].Value.ToString();
+                Image mds = (Bitmap)((new ImageConverter()).ConvertFrom(dgvTTSanPham.Rows[num].Cells[10].Value));
+                pictureBox1.Image = mds;
+                txtStatus.Text = dgvTTSanPham.Rows[num].Cells[9].Value.ToString();
+                if (dgvTTSanPham.Rows[num].Cells[9].Value.ToString() == "Hết sử dụng")
+                {
+                    checkStatus.Checked = true;
+                }
+                else
+                {
+                    checkStatus.Checked = false;
+                }
+            }
         }
 
         private void btnChonLogo_Click(object sender, EventArgs e)
@@ -204,6 +241,7 @@ namespace HKD_ClothesShop.Forms
                 pictureBox1.ImageLocation = openFile.FileName;
             }
         }
+
 
         private void label7_Click(object sender, EventArgs e)
         {
