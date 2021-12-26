@@ -28,6 +28,7 @@ namespace HKD_ClothesShop.Forms
             foreach (var item in listSanPham)
             {
                 int index = dgvTTSanPham.Rows.Add();
+                dgvTTSanPham.Rows[index].Cells[0].Value = item.AnhBiaSP;
                 dgvTTSanPham.Rows[index].Cells[1].Value = item.MaSanPham;
                 dgvTTSanPham.Rows[index].Cells[2].Value = item.MaLoaiSP;
                 dgvTTSanPham.Rows[index].Cells[3].Value = item.MaThuongHieu;
@@ -38,16 +39,13 @@ namespace HKD_ClothesShop.Forms
                 dgvTTSanPham.Rows[index].Cells[8].Value = item.NgayCapNhat;
                 dgvTTSanPham.Rows[index].Cells[9].Value = item.MoTa;
                 dgvTTSanPham.Rows[index].Cells[10].Value = item.Status;
-                dgvTTSanPham.Rows[index].Cells[0].Value = item.AnhBiaSP;
-
-
                 if (item.Status == true)
                 {
-                    dgvTTSanPham.Rows[index].Cells[9].Value = "Hết sử dụng";
+                    dgvTTSanPham.Rows[index].Cells[10].Value = "Hết sử dụng";
                 }
                 else
                 {
-                    dgvTTSanPham.Rows[index].Cells[9].Value = "Còn sử dụng";
+                    dgvTTSanPham.Rows[index].Cells[10].Value = "Còn sử dụng";
                 }
             }
         }
@@ -99,8 +97,8 @@ namespace HKD_ClothesShop.Forms
         {
             for (int i = 0; i < dgvTTSanPham.Rows.Count; i++)
             {
-                if (dgvTTSanPham.Rows[i].Cells[0].Value != null)
-                    if (dgvTTSanPham.Rows[i].Cells[0].Value.ToString() == id)
+                if (dgvTTSanPham.Rows[i].Cells[1].Value != null)
+                    if (dgvTTSanPham.Rows[i].Cells[1].Value.ToString() == id)
                     {
                         return i;
                     }
@@ -207,6 +205,8 @@ namespace HKD_ClothesShop.Forms
             int num = e.RowIndex;
             if (dgvTTSanPham.Rows.Count > 0)
             {
+                Image mds = (Bitmap)((new ImageConverter()).ConvertFrom(dgvTTSanPham.Rows[num].Cells[0].Value));
+                pictureBox1.Image = mds;
                 txtMaSP.Text = dgvTTSanPham.Rows[num].Cells[1].Value.ToString();
                 cmbMaLoai.Text = dgvTTSanPham.Rows[num].Cells[2].Value.ToString();
                 cmbMaTH.Text = dgvTTSanPham.Rows[num].Cells[3].Value.ToString();
@@ -216,9 +216,8 @@ namespace HKD_ClothesShop.Forms
                 txtChatLieu.Text = dgvTTSanPham.Rows[num].Cells[7].Value.ToString();
                 dateTimePicker1.Text = dgvTTSanPham.Rows[num].Cells[8].Value.ToString();
                 txtMota.Text = dgvTTSanPham.Rows[num].Cells[9].Value.ToString();
-                Image mds = (Bitmap)((new ImageConverter()).ConvertFrom(dgvTTSanPham.Rows[num].Cells[0].Value));
-                pictureBox1.Image = mds;
-                txtStatus.Text = dgvTTSanPham.Rows[num].Cells[10].Value.ToString();
+                
+                lbStatus.Text = dgvTTSanPham.Rows[num].Cells[10].Value.ToString();
                 if (dgvTTSanPham.Rows[num].Cells[10].Value.ToString() == "Hết sử dụng")
                 {
                     checkStatus.Checked = true;

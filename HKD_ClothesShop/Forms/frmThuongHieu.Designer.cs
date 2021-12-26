@@ -31,10 +31,10 @@ namespace HKD_ClothesShop.Forms
         {
             this.btnClose = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textStatus = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnChonLogo = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.checkStatus = new System.Windows.Forms.CheckBox();
@@ -53,7 +53,7 @@ namespace HKD_ClothesShop.Forms
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lbStatus = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThuongHieu)).BeginInit();
@@ -75,9 +75,9 @@ namespace HKD_ClothesShop.Forms
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lbStatus);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.textStatus);
             this.groupBox1.Controls.Add(this.btnSua);
             this.groupBox1.Controls.Add(this.btnChonLogo);
             this.groupBox1.Controls.Add(this.btnThoat);
@@ -102,12 +102,25 @@ namespace HKD_ClothesShop.Forms
             this.groupBox1.Text = "Nhập thông tin Thương hiệu";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // textStatus
+            // pictureBox1
             // 
-            this.textStatus.Location = new System.Drawing.Point(205, 240);
-            this.textStatus.Name = "textStatus";
-            this.textStatus.Size = new System.Drawing.Size(269, 30);
-            this.textStatus.TabIndex = 32;
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.pictureBox1.Location = new System.Drawing.Point(307, 316);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(167, 154);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 27;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(21, 240);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(110, 25);
+            this.label5.TabIndex = 33;
+            this.label5.Text = "Trạng thái";
             // 
             // btnSua
             // 
@@ -130,17 +143,6 @@ namespace HKD_ClothesShop.Forms
             this.btnChonLogo.Text = "Chọn logo";
             this.btnChonLogo.UseVisualStyleBackColor = true;
             this.btnChonLogo.Click += new System.EventHandler(this.btnChonLogo_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.pictureBox1.Location = new System.Drawing.Point(307, 316);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(167, 154);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 27;
-            this.pictureBox1.TabStop = false;
             // 
             // btnThoat
             // 
@@ -308,14 +310,13 @@ namespace HKD_ClothesShop.Forms
             this.Column6.Name = "Column6";
             this.Column6.Width = 150;
             // 
-            // label5
+            // lbStatus
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(21, 240);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(110, 25);
-            this.label5.TabIndex = 33;
-            this.label5.Text = "Trạng thái";
+            this.lbStatus.AutoSize = true;
+            this.lbStatus.Location = new System.Drawing.Point(200, 250);
+            this.lbStatus.Name = "lbStatus";
+            this.lbStatus.Size = new System.Drawing.Size(0, 25);
+            this.lbStatus.TabIndex = 34;
             // 
             // frmThuongHieu
             // 
@@ -358,7 +359,6 @@ namespace HKD_ClothesShop.Forms
         private System.Windows.Forms.TextBox txtMaTH;
         private System.Windows.Forms.DataGridView dgvThuongHieu;
         private System.Windows.Forms.Button btnSua;
-        private System.Windows.Forms.TextBox textStatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -366,5 +366,6 @@ namespace HKD_ClothesShop.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lbStatus;
     }
 }

@@ -162,7 +162,7 @@ namespace HKD_ClothesShop.Forms
                 txtTenTH.Text = dgvThuongHieu.Rows[num].Cells[1].Value.ToString();
                 txtDiaChi.Text = dgvThuongHieu.Rows[num].Cells[2].Value.ToString();
                 txtSDT.Text = dgvThuongHieu.Rows[num].Cells[3].Value.ToString();
-                textStatus.Text = dgvThuongHieu.Rows[num].Cells[4].Value.ToString();
+                lbStatus.Text = dgvThuongHieu.Rows[num].Cells[4].Value.ToString();
                 Image mds = (Bitmap)((new ImageConverter()).ConvertFrom(dgvThuongHieu.Rows[num].Cells[5].Value));
                 pictureBox1.Image = mds;
                 if(dgvThuongHieu.Rows[num].Cells[4].Value.ToString() == "Hết sử dụng")

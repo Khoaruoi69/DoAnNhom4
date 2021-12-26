@@ -149,7 +149,7 @@ namespace HKD_ClothesShop.Forms
             {
                 txtMaLoai.Text = dgvSanPham.Rows[num].Cells[0].Value.ToString();
                 txtTenLoai.Text = dgvSanPham.Rows[num].Cells[1].Value.ToString();
-                txtStatus.Text = dgvSanPham.Rows[num].Cells[2].Value.ToString();
+                lbStatus.Text = dgvSanPham.Rows[num].Cells[2].Value.ToString();
 
                 if(dgvSanPham.Rows[num].Cells[2].Value.ToString() == "Hết hàng")
                 {

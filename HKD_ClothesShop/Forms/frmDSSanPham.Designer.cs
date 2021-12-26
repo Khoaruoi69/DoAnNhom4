@@ -33,6 +33,17 @@ namespace HKD_ClothesShop.Forms
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.btnThem = new System.Windows.Forms.Button();
             this.dgvTTSanPham = new System.Windows.Forms.DataGridView();
+            this.Column11 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label10 = new System.Windows.Forms.Label();
             this.btnSua = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -49,28 +60,17 @@ namespace HKD_ClothesShop.Forms
             this.btnChonLogo = new System.Windows.Forms.Button();
             this.txtMaSP = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnThoat = new System.Windows.Forms.Button();
             this.txtMota = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.cmbMaTH = new System.Windows.Forms.ComboBox();
             this.cmbMaLoai = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.txtStatus = new System.Windows.Forms.TextBox();
             this.txtChatLieu = new System.Windows.Forms.TextBox();
             this.txtDonGia = new System.Windows.Forms.TextBox();
             this.txtDVT = new System.Windows.Forms.TextBox();
             this.txtTenSP = new System.Windows.Forms.TextBox();
-            this.btnThoat = new System.Windows.Forms.Button();
-            this.Column11 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lbStatus = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTTSanPham)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -128,9 +128,89 @@ namespace HKD_ClothesShop.Forms
             this.dgvTTSanPham.Name = "dgvTTSanPham";
             this.dgvTTSanPham.RowHeadersWidth = 30;
             this.dgvTTSanPham.RowTemplate.Height = 24;
-            this.dgvTTSanPham.Size = new System.Drawing.Size(991, 686);
+            this.dgvTTSanPham.Size = new System.Drawing.Size(1057, 686);
             this.dgvTTSanPham.TabIndex = 31;
             this.dgvTTSanPham.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTTSanPham_CellContentClick);
+            // 
+            // Column11
+            // 
+            this.Column11.HeaderText = "Ảnh bìa";
+            this.Column11.MinimumWidth = 6;
+            this.Column11.Name = "Column11";
+            this.Column11.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column11.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Column11.Width = 62;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Mã sản phẩm";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column1.Width = 112;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Mã loại sản phẩm";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 104;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Mã thương hiệu";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 124;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Tên sản phẩm";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 118;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Đơn vị tính";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 75;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Đơn giá";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            this.Column6.Width = 63;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Chất liệu";
+            this.Column7.MinimumWidth = 6;
+            this.Column7.Name = "Column7";
+            this.Column7.Width = 85;
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Ngày cập nhập";
+            this.Column8.MinimumWidth = 6;
+            this.Column8.Name = "Column8";
+            this.Column8.Width = 122;
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "Mô tả";
+            this.Column9.MinimumWidth = 6;
+            this.Column9.Name = "Column9";
+            this.Column9.Width = 56;
+            // 
+            // Column10
+            // 
+            this.Column10.HeaderText = "Trạng thái";
+            this.Column10.MinimumWidth = 6;
+            this.Column10.Name = "Column10";
+            this.Column10.Width = 94;
             // 
             // label10
             // 
@@ -292,6 +372,7 @@ namespace HKD_ClothesShop.Forms
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lbStatus);
             this.groupBox1.Controls.Add(this.btnThoat);
             this.groupBox1.Controls.Add(this.txtMota);
             this.groupBox1.Controls.Add(this.btnSua);
@@ -301,7 +382,6 @@ namespace HKD_ClothesShop.Forms
             this.groupBox1.Controls.Add(this.btnThem);
             this.groupBox1.Controls.Add(this.cmbMaLoai);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Controls.Add(this.txtStatus);
             this.groupBox1.Controls.Add(this.txtChatLieu);
             this.groupBox1.Controls.Add(this.txtDonGia);
             this.groupBox1.Controls.Add(this.txtDVT);
@@ -325,6 +405,18 @@ namespace HKD_ClothesShop.Forms
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Nhập thông tin sản phẩm";
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThoat.Location = new System.Drawing.Point(7, 615);
+            this.btnThoat.Margin = new System.Windows.Forms.Padding(4);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(125, 58);
+            this.btnThoat.TabIndex = 34;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // txtMota
             // 
@@ -374,14 +466,6 @@ namespace HKD_ClothesShop.Forms
             this.dateTimePicker1.Size = new System.Drawing.Size(195, 30);
             this.dateTimePicker1.TabIndex = 39;
             // 
-            // txtStatus
-            // 
-            this.txtStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStatus.Location = new System.Drawing.Point(200, 363);
-            this.txtStatus.Name = "txtStatus";
-            this.txtStatus.Size = new System.Drawing.Size(195, 27);
-            this.txtStatus.TabIndex = 38;
-            // 
             // txtChatLieu
             // 
             this.txtChatLieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -414,97 +498,13 @@ namespace HKD_ClothesShop.Forms
             this.txtTenSP.Size = new System.Drawing.Size(195, 27);
             this.txtTenSP.TabIndex = 33;
             // 
-            // btnThoat
+            // lbStatus
             // 
-            this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoat.Location = new System.Drawing.Point(7, 615);
-            this.btnThoat.Margin = new System.Windows.Forms.Padding(4);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(125, 58);
-            this.btnThoat.TabIndex = 34;
-            this.btnThoat.Text = "Thoát";
-            this.btnThoat.UseVisualStyleBackColor = true;
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
-            // 
-            // Column11
-            // 
-            this.Column11.HeaderText = "Ảnh bìa";
-            this.Column11.MinimumWidth = 6;
-            this.Column11.Name = "Column11";
-            this.Column11.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column11.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Column11.Width = 85;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Mã sản phẩm";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column1.Width = 122;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Mã loại sản phẩm";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 104;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Mã thương hiệu";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 124;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Tên sản phẩm";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 118;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Đơn vị tính";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 75;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Đơn giá";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 63;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Chất liệu";
-            this.Column7.MinimumWidth = 6;
-            this.Column7.Name = "Column7";
-            this.Column7.Width = 85;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Ngày cập nhập";
-            this.Column8.MinimumWidth = 6;
-            this.Column8.Name = "Column8";
-            this.Column8.Width = 122;
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "Mô tả";
-            this.Column9.MinimumWidth = 6;
-            this.Column9.Name = "Column9";
-            this.Column9.Width = 56;
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "Trạng thái";
-            this.Column10.MinimumWidth = 6;
-            this.Column10.Name = "Column10";
-            this.Column10.Width = 94;
+            this.lbStatus.AutoSize = true;
+            this.lbStatus.Location = new System.Drawing.Point(195, 370);
+            this.lbStatus.Name = "lbStatus";
+            this.lbStatus.Size = new System.Drawing.Size(0, 25);
+            this.lbStatus.TabIndex = 44;
             // 
             // frmDSSanPham
             // 
@@ -554,7 +554,6 @@ namespace HKD_ClothesShop.Forms
         private System.Windows.Forms.ComboBox cmbMaTH;
         private System.Windows.Forms.ComboBox cmbMaLoai;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox txtStatus;
         private System.Windows.Forms.TextBox txtChatLieu;
         private System.Windows.Forms.TextBox txtDonGia;
         private System.Windows.Forms.TextBox txtDVT;
@@ -573,5 +572,6 @@ namespace HKD_ClothesShop.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
+        private System.Windows.Forms.Label lbStatus;
     }
 }

@@ -32,12 +32,15 @@ namespace HKD_ClothesShop.Forms
             this.btnClose = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label5 = new System.Windows.Forms.Label();
+            this.dgvDacDiem = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btntThoat = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtStatus = new System.Windows.Forms.TextBox();
             this.checkStatus = new System.Windows.Forms.CheckBox();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.txtColor = new System.Windows.Forms.TextBox();
@@ -45,15 +48,12 @@ namespace HKD_ClothesShop.Forms
             this.txtSize = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dgvDacDiem = new System.Windows.Forms.DataGridView();
-            this.label5 = new System.Windows.Forms.Label();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.lbStatus = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDacDiem)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnClose
@@ -96,24 +96,61 @@ namespace HKD_ClothesShop.Forms
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
-            // tabPage2
+            // label5
             // 
-            this.tabPage2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage2.Location = new System.Drawing.Point(4, 34);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1200, 654);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Đặc điểm sản phẩm";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.label5.Location = new System.Drawing.Point(358, 17);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(308, 44);
+            this.label5.TabIndex = 34;
+            this.label5.Text = "Đặc điểm chung";
+            // 
+            // dgvDacDiem
+            // 
+            this.dgvDacDiem.AllowUserToAddRows = false;
+            this.dgvDacDiem.AllowUserToDeleteRows = false;
+            this.dgvDacDiem.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDacDiem.BackgroundColor = System.Drawing.Color.White;
+            this.dgvDacDiem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDacDiem.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3});
+            this.dgvDacDiem.Location = new System.Drawing.Point(398, 120);
+            this.dgvDacDiem.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvDacDiem.Name = "dgvDacDiem";
+            this.dgvDacDiem.RowHeadersWidth = 51;
+            this.dgvDacDiem.Size = new System.Drawing.Size(742, 459);
+            this.dgvDacDiem.TabIndex = 33;
+            this.dgvDacDiem.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDacDiem_CellContentClick);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Kích thước";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Màu sắc";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Trạng thái";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.lbStatus);
             this.groupBox1.Controls.Add(this.btntThoat);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtStatus);
             this.groupBox1.Controls.Add(this.checkStatus);
             this.groupBox1.Controls.Add(this.btnUpdate);
             this.groupBox1.Controls.Add(this.txtColor);
@@ -164,14 +201,6 @@ namespace HKD_ClothesShop.Forms
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(0, 20);
             this.label2.TabIndex = 57;
-            // 
-            // txtStatus
-            // 
-            this.txtStatus.Location = new System.Drawing.Point(153, 139);
-            this.txtStatus.Margin = new System.Windows.Forms.Padding(4);
-            this.txtStatus.Name = "txtStatus";
-            this.txtStatus.Size = new System.Drawing.Size(152, 26);
-            this.txtStatus.TabIndex = 56;
             // 
             // checkStatus
             // 
@@ -254,52 +283,24 @@ namespace HKD_ClothesShop.Forms
             this.label1.TabIndex = 50;
             this.label1.Text = "Kích thước";
             // 
-            // dgvDacDiem
+            // tabPage2
             // 
-            this.dgvDacDiem.AllowUserToAddRows = false;
-            this.dgvDacDiem.AllowUserToDeleteRows = false;
-            this.dgvDacDiem.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvDacDiem.BackgroundColor = System.Drawing.Color.White;
-            this.dgvDacDiem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDacDiem.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3});
-            this.dgvDacDiem.Location = new System.Drawing.Point(398, 120);
-            this.dgvDacDiem.Margin = new System.Windows.Forms.Padding(4);
-            this.dgvDacDiem.Name = "dgvDacDiem";
-            this.dgvDacDiem.RowHeadersWidth = 51;
-            this.dgvDacDiem.Size = new System.Drawing.Size(742, 459);
-            this.dgvDacDiem.TabIndex = 33;
+            this.tabPage2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPage2.Location = new System.Drawing.Point(4, 34);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1200, 654);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Đặc điểm sản phẩm";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // label5
+            // lbStatus
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.label5.Location = new System.Drawing.Point(358, 17);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(308, 44);
-            this.label5.TabIndex = 34;
-            this.label5.Text = "Đặc điểm chung";
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Kích thước";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Màu sắc";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Trạng thái";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
+            this.lbStatus.AutoSize = true;
+            this.lbStatus.Location = new System.Drawing.Point(149, 145);
+            this.lbStatus.Name = "lbStatus";
+            this.lbStatus.Size = new System.Drawing.Size(0, 20);
+            this.lbStatus.TabIndex = 60;
             // 
             // frnDacDiems
             // 
@@ -316,9 +317,9 @@ namespace HKD_ClothesShop.Forms
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDacDiem)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDacDiem)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -333,7 +334,6 @@ namespace HKD_ClothesShop.Forms
         private System.Windows.Forms.Button btntThoat;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtStatus;
         private System.Windows.Forms.CheckBox checkStatus;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.TextBox txtColor;
@@ -346,5 +346,6 @@ namespace HKD_ClothesShop.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.Label lbStatus;
     }
 }

@@ -31,7 +31,7 @@ namespace HKD_ClothesShop.Forms
         {
             this.btnClose = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtStatus = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnCreat = new System.Windows.Forms.Button();
@@ -45,7 +45,7 @@ namespace HKD_ClothesShop.Forms
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lbStatus = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSanPham)).BeginInit();
             this.SuspendLayout();
@@ -66,8 +66,8 @@ namespace HKD_ClothesShop.Forms
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lbStatus);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.txtStatus);
             this.groupBox1.Controls.Add(this.btnSua);
             this.groupBox1.Controls.Add(this.btnExit);
             this.groupBox1.Controls.Add(this.btnCreat);
@@ -86,12 +86,14 @@ namespace HKD_ClothesShop.Forms
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Loại sản phẩm";
             // 
-            // txtStatus
+            // label4
             // 
-            this.txtStatus.Location = new System.Drawing.Point(205, 143);
-            this.txtStatus.Name = "txtStatus";
-            this.txtStatus.Size = new System.Drawing.Size(269, 30);
-            this.txtStatus.TabIndex = 23;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(21, 148);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(110, 25);
+            this.label4.TabIndex = 24;
+            this.label4.Text = "Trạng thái";
             // 
             // btnSua
             // 
@@ -224,14 +226,13 @@ namespace HKD_ClothesShop.Forms
             this.label3.Text = "DANH SÁCH LOẠI SẢN PHẨM";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // label4
+            // lbStatus
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(21, 148);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(110, 25);
-            this.label4.TabIndex = 24;
-            this.label4.Text = "Trạng thái";
+            this.lbStatus.AutoSize = true;
+            this.lbStatus.Location = new System.Drawing.Point(200, 148);
+            this.lbStatus.Name = "lbStatus";
+            this.lbStatus.Size = new System.Drawing.Size(0, 25);
+            this.lbStatus.TabIndex = 25;
             // 
             // frmLoaiSanPham
             // 
@@ -273,7 +274,7 @@ namespace HKD_ClothesShop.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnSua;
-        private System.Windows.Forms.TextBox txtStatus;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lbStatus;
     }
 }

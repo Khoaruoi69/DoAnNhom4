@@ -69,7 +69,7 @@ namespace HKD_ClothesShop.Forms
 
 
 
-                if (item.Status == true)
+                if (item.Status == false)
                 {
                     dgvDacDiem.Rows[index].Cells[2].Value = "Còn sử dụng";
                 }
@@ -99,7 +99,7 @@ namespace HKD_ClothesShop.Forms
             for (int i = 0; i < dgvDacDiem.Rows.Count; i++)
             {
                 if (dgvDacDiem.Rows[i].Cells[0].Value != null && dgvDacDiem.Rows[i].Cells[1].Value != null)
-                    if (dgvDacDiem.Rows[i].Cells[0].Value.ToString() == id && dgvDacDiem.Rows[i].Cells[1].Value.ToString() == ids)
+                    if (dgvDacDiem.Rows[i].Cells[0].Value.ToString().Trim() == id && dgvDacDiem.Rows[i].Cells[1].Value.ToString().Trim() == ids)
                     {
                         return i;
                     }
@@ -139,8 +139,10 @@ namespace HKD_ClothesShop.Forms
                     DacDiem st = db.DacDiems.Where(p => p.Size == id && p.Color ==ids).FirstOrDefault();
                     if (st != null)
                     {
+                        /*
                         st.Size = txtSize.Text;
                         st.Color = txtColor.Text;
+                        */
                         st.MoTa = "không";
                         st.Status = checkStatus.Checked;
                         db.SaveChanges();
@@ -172,6 +174,27 @@ namespace HKD_ClothesShop.Forms
             if (dr == DialogResult.Yes)
             {
                 this.Close();
+            }
+        }
+
+        private void dgvDacDiem_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int num = e.RowIndex;
+            if (dgvDacDiem.Rows.Count > 0)
+            {
+                txtSize.Text = dgvDacDiem.Rows[num].Cells[0].Value.ToString();
+                txtColor.Text = dgvDacDiem.Rows[num].Cells[1].Value.ToString();
+                lbStatus.Text = dgvDacDiem.Rows[num].Cells[2].Value.ToString();
+
+                
+                if (dgvDacDiem.Rows[num].Cells[2].Value.ToString() == "Hết sử dụng")
+                {
+                    checkStatus.Checked = true;
+                }
+                else
+                {
+                    checkStatus.Checked = false;
+                }
             }
         }
     }
