@@ -28,17 +28,17 @@ namespace HKD_ClothesShop.Forms
             foreach (var item in listSanPham)
             {
                 int index = dgvTTSanPham.Rows.Add();
-                dgvTTSanPham.Rows[index].Cells[0].Value = item.MaSanPham;
-                dgvTTSanPham.Rows[index].Cells[1].Value = item.MaLoaiSP;
-                dgvTTSanPham.Rows[index].Cells[2].Value = item.MaThuongHieu;
-                dgvTTSanPham.Rows[index].Cells[3].Value = item.TenSanPham;
-                dgvTTSanPham.Rows[index].Cells[4].Value = item.DonViTinh;
-                dgvTTSanPham.Rows[index].Cells[5].Value = item.DonGia;
-                dgvTTSanPham.Rows[index].Cells[6].Value = item.ChatLieu;
-                dgvTTSanPham.Rows[index].Cells[7].Value = item.NgayCapNhat;
-                dgvTTSanPham.Rows[index].Cells[8].Value = item.MoTa;
-                dgvTTSanPham.Rows[index].Cells[9].Value = item.Status;
-                dgvTTSanPham.Rows[index].Cells[10].Value = item.AnhBiaSP;
+                dgvTTSanPham.Rows[index].Cells[1].Value = item.MaSanPham;
+                dgvTTSanPham.Rows[index].Cells[2].Value = item.MaLoaiSP;
+                dgvTTSanPham.Rows[index].Cells[3].Value = item.MaThuongHieu;
+                dgvTTSanPham.Rows[index].Cells[4].Value = item.TenSanPham;
+                dgvTTSanPham.Rows[index].Cells[5].Value = item.DonViTinh;
+                dgvTTSanPham.Rows[index].Cells[6].Value = item.DonGia;
+                dgvTTSanPham.Rows[index].Cells[7].Value = item.ChatLieu;
+                dgvTTSanPham.Rows[index].Cells[8].Value = item.NgayCapNhat;
+                dgvTTSanPham.Rows[index].Cells[9].Value = item.MoTa;
+                dgvTTSanPham.Rows[index].Cells[10].Value = item.Status;
+                dgvTTSanPham.Rows[index].Cells[0].Value = item.AnhBiaSP;
 
 
                 if (item.Status == true)
@@ -207,19 +207,19 @@ namespace HKD_ClothesShop.Forms
             int num = e.RowIndex;
             if (dgvTTSanPham.Rows.Count > 0)
             {
-                txtMaSP.Text = dgvTTSanPham.Rows[num].Cells[0].Value.ToString();
-                cmbMaLoai.Text = dgvTTSanPham.Rows[num].Cells[1].Value.ToString();
-                cmbMaTH.Text = dgvTTSanPham.Rows[num].Cells[2].Value.ToString();
-                txtTenSP.Text = dgvTTSanPham.Rows[num].Cells[3].Value.ToString();
-                txtDVT.Text = dgvTTSanPham.Rows[num].Cells[4].Value.ToString();
-                txtDonGia.Text = dgvTTSanPham.Rows[num].Cells[5].Value.ToString();
-                txtChatLieu.Text = dgvTTSanPham.Rows[num].Cells[6].Value.ToString();
-                dateTimePicker1.Text = dgvTTSanPham.Rows[num].Cells[7].Value.ToString();
-                txtMota.Text = dgvTTSanPham.Rows[num].Cells[8].Value.ToString();
-                Image mds = (Bitmap)((new ImageConverter()).ConvertFrom(dgvTTSanPham.Rows[num].Cells[10].Value));
+                txtMaSP.Text = dgvTTSanPham.Rows[num].Cells[1].Value.ToString();
+                cmbMaLoai.Text = dgvTTSanPham.Rows[num].Cells[2].Value.ToString();
+                cmbMaTH.Text = dgvTTSanPham.Rows[num].Cells[3].Value.ToString();
+                txtTenSP.Text = dgvTTSanPham.Rows[num].Cells[4].Value.ToString();
+                txtDVT.Text = dgvTTSanPham.Rows[num].Cells[5].Value.ToString();
+                txtDonGia.Text = dgvTTSanPham.Rows[num].Cells[6].Value.ToString();
+                txtChatLieu.Text = dgvTTSanPham.Rows[num].Cells[7].Value.ToString();
+                dateTimePicker1.Text = dgvTTSanPham.Rows[num].Cells[8].Value.ToString();
+                txtMota.Text = dgvTTSanPham.Rows[num].Cells[9].Value.ToString();
+                Image mds = (Bitmap)((new ImageConverter()).ConvertFrom(dgvTTSanPham.Rows[num].Cells[0].Value));
                 pictureBox1.Image = mds;
-                txtStatus.Text = dgvTTSanPham.Rows[num].Cells[9].Value.ToString();
-                if (dgvTTSanPham.Rows[num].Cells[9].Value.ToString() == "Hết sử dụng")
+                txtStatus.Text = dgvTTSanPham.Rows[num].Cells[10].Value.ToString();
+                if (dgvTTSanPham.Rows[num].Cells[10].Value.ToString() == "Hết sử dụng")
                 {
                     checkStatus.Checked = true;
                 }
@@ -266,6 +266,15 @@ namespace HKD_ClothesShop.Forms
         private void btnSua_Click(object sender, EventArgs e)
         {
             edit();
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Bạn có muốn thoát ??", "Thông báo", MessageBoxButtons.YesNo);
+            if (dr == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
     }
 }

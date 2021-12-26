@@ -116,7 +116,7 @@ namespace HKD_ClothesShop.Forms
 
         private void panelLapPhieuYC_Click(object sender, EventArgs e)
         {
-            openChildForm(new frmTonKho());
+            openChildForm(new frnDacDiems());
         }
 
         private void panelTinhLuongNhanVien_Click(object sender, EventArgs e)
@@ -127,6 +127,26 @@ namespace HKD_ClothesShop.Forms
         private void panelThuChi_Click(object sender, EventArgs e)
         {
             openChildForm(new frmTaiChinh());
+        }
+
+        private void panelUpdateTTSanPham_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label22_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label20_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelUpdateTTSanPham_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frnDacDiems());
         }
     }
 }

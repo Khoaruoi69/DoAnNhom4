@@ -165,7 +165,7 @@ namespace HKD_ClothesShop
 
         private void btnTonKho_Click(object sender, EventArgs e)
         {
-            openChildForm(new frmTonKho());
+            openChildForm(new frnDacDiems());
             hideSubmenu();
         }
 
