@@ -296,14 +296,9 @@ namespace HKD_ClothesShop.Forms
                     string id = cbmMaSP.Text;
                     string ids = cmbColor.Text;
                     string idss = cmbSize.Text;
-                    DacDiem_SanPham st = db.DacDiem_SanPham.Where(p => p.Size == id&& p.Color==ids && p.Size==idss).FirstOrDefault();
+                    DacDiem_SanPham st = db.DacDiem_SanPham.Where(p => p.MaSanPham == id && p.Color == ids && p.Size == idss).FirstOrDefault();
                     if (st != null)
                     {
-                        /*
-                        st.Size = txtSize.Text;
-                        st.Color = txtColor.Text;
-                        */
-
                         st.SoLuong = Convert.ToInt32(txtSoLuong.Text);
                         db.SaveChanges();
                         frnDacDiems_Load(null, null);
