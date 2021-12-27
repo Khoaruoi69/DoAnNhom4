@@ -31,6 +31,7 @@ namespace HKD_ClothesShop.Forms
         {
             this.btnClose = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lbStatus = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnSua = new System.Windows.Forms.Button();
@@ -53,7 +54,7 @@ namespace HKD_ClothesShop.Forms
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lbStatus = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThuongHieu)).BeginInit();
@@ -101,6 +102,14 @@ namespace HKD_ClothesShop.Forms
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Nhập thông tin Thương hiệu";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // lbStatus
+            // 
+            this.lbStatus.AutoSize = true;
+            this.lbStatus.Location = new System.Drawing.Point(200, 250);
+            this.lbStatus.Name = "lbStatus";
+            this.lbStatus.Size = new System.Drawing.Size(0, 25);
+            this.lbStatus.TabIndex = 34;
             // 
             // pictureBox1
             // 
@@ -310,13 +319,17 @@ namespace HKD_ClothesShop.Forms
             this.Column6.Name = "Column6";
             this.Column6.Width = 150;
             // 
-            // lbStatus
+            // label6
             // 
-            this.lbStatus.AutoSize = true;
-            this.lbStatus.Location = new System.Drawing.Point(200, 250);
-            this.lbStatus.Name = "lbStatus";
-            this.lbStatus.Size = new System.Drawing.Size(0, 25);
-            this.lbStatus.TabIndex = 34;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.label6.Location = new System.Drawing.Point(479, 15);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(252, 44);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Thương hiệu ";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // frmThuongHieu
             // 
@@ -324,6 +337,7 @@ namespace HKD_ClothesShop.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1612, 780);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.dgvThuongHieu);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnClose);
@@ -337,6 +351,7 @@ namespace HKD_ClothesShop.Forms
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThuongHieu)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -367,5 +382,6 @@ namespace HKD_ClothesShop.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lbStatus;
+        private System.Windows.Forms.Label label6;
     }
 }

@@ -159,7 +159,7 @@ namespace HKD_ClothesShop.Forms
                     SanPham st = db.SanPhams.Where(p => p.MaSanPham == id).FirstOrDefault();
                     if (st != null)
                     {
-                        st.MaSanPham = txtMaSP.Text;
+                        //st.MaSanPham = txtMaSP.Text;
                         st.MaLoaiSP = cmbMaLoai.Text;
                         st.MaThuongHieu = cmbMaTH.Text;
                         st.TenSanPham = txtTenSP.Text;
