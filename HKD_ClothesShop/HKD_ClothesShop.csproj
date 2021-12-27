@@ -97,12 +97,6 @@
     <Compile Include="Forms\frmNhanVienShop.Designer.cs">
       <DependentUpon>frmNhanVienShop.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmVanChuyen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\frmVanChuyen.Designer.cs">
-      <DependentUpon>frmVanChuyen.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\frmPhanHoi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -257,9 +251,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmNhanVienShop.resx">
       <DependentUpon>frmNhanVienShop.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmVanChuyen.resx">
-      <DependentUpon>frmVanChuyen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmPhanHoi.resx">
       <DependentUpon>frmPhanHoi.cs</DependentUpon>

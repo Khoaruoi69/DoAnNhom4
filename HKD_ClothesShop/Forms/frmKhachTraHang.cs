@@ -21,5 +21,10 @@ namespace HKD_ClothesShop.Forms
         {
             this.Close();
         }
+
+        private void frmKhachTraHang_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -61,8 +61,8 @@ namespace HKD_ClothesShop.Forms
                 else
                     dgvNhanVien.Rows[index].Cells[3].Value = "Khác";
                 dgvNhanVien.Rows[index].Cells[4].Value = item.NgaySinh;
-                dgvNhanVien.Rows[index].Cells[5].Value = item.SDT;
-                dgvNhanVien.Rows[index].Cells[6].Value = item.Email;
+                dgvNhanVien.Rows[index].Cells[6].Value = item.SDT;
+                dgvNhanVien.Rows[index].Cells[5].Value = item.Email;
                 if (item.Status == false)
                     dgvNhanVien.Rows[index].Cells[7].Value = "Còn làm việc";
                 else
@@ -71,7 +71,7 @@ namespace HKD_ClothesShop.Forms
         }
         bool kiemtra()
         {
-            if (txtMaNV.Text == "" || txtHoTen.Text == "" || txtEmail.Text == "" || txtSDT.Text == "" )
+            if (txtMaNV.Text == "" || txtHoTen.Text == "" || txtEmail.Text == "" || txtSDT.Text == "")
             {
                 MessageBox.Show("Hãy nhập đầy đủ thông tin thương hiệu", "Thông báo", MessageBoxButtons.OK);
                 return false;
@@ -168,32 +168,19 @@ namespace HKD_ClothesShop.Forms
         }
 
 
-        private void btnCreat_Click(object sender, EventArgs e)
+       
+
+        
+        
+
+       
+
+        private void btnCreate_Click(object sender, EventArgs e)
         {
             add();
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-            edit();
-        }
-
-        private void dgvNhanVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int num = e.RowIndex;
-            if (dgvNhanVien.Rows.Count > 0)
-            {
-                Image mds = (Bitmap)((new ImageConverter()).ConvertFrom(dgvNhanVien.Rows[num].Cells[0].Value));
-                pictureBox1.Image = mds;
-                txtMaNV.Text = dgvNhanVien.Rows[num].Cells[1].Value.ToString();
-
-                txtHoTen.Text = dgvNhanVien.Rows[num].Cells[2].Value.ToString();
-                txtEmail.Text = dgvNhanVien.Rows[num].Cells[4].Value.ToString();
-               
-            }
-        }
-
-        private void btnChonAnh_Click(object sender, EventArgs e)
+        private void btnChonAnh_Click_1(object sender, EventArgs e)
         {
             OpenFileDialog openFile = new OpenFileDialog();
             openFile.Filter = "Pictures files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png)|*.jpg; *.jpeg; *.jpe; *.jfif; *.png|All files (*.*)|*.*";
@@ -204,8 +191,41 @@ namespace HKD_ClothesShop.Forms
                 pictureBox1.ImageLocation = openFile.FileName;
             }
 
+
         }
 
-        
+        private void dgvNhanVien_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            int num = e.RowIndex;
+            if (dgvNhanVien.Rows.Count > 0)
+            {
+                Image mds = (Bitmap)((new ImageConverter()).ConvertFrom(dgvNhanVien.Rows[num].Cells[0].Value));
+                pictureBox1.Image = mds;
+                txtMaNV.Text = dgvNhanVien.Rows[num].Cells[1].Value.ToString();
+                txtHoTen.Text = dgvNhanVien.Rows[num].Cells[2].Value.ToString();
+                dateTimePicker1.Text = dgvNhanVien.Rows[num].Cells[4].Value.ToString();
+                txtEmail.Text = dgvNhanVien.Rows[num].Cells[5].Value.ToString();
+                txtSDT.Text = dgvNhanVien.Rows[num].Cells[6].Value.ToString();
+                lbStatus.Text = dgvNhanVien.Rows[num].Cells[7].Value.ToString();
+                if (dgvNhanVien.Rows[num].Cells[3].Value.ToString() == "Nam")
+                {
+                    radNam.Checked = true;
+                }
+                if (dgvNhanVien.Rows[num].Cells[3].Value.ToString() == "Nữ")
+                {
+                    radNu.Checked = true;
+                }
+                if (dgvNhanVien.Rows[num].Cells[3].Value.ToString() == "Khác")
+                {
+                    radKhac.Checked = true;
+                }
+
+            }
+        }
+
+        private void btnUpdate_Click_1(object sender, EventArgs e)
+        {
+            edit();
+        }
     }
 }

@@ -226,7 +226,7 @@ namespace HKD_ClothesShop
         {
             hideSubmenu();
             ActivateButton(sender, RGBColors.mau10);
-            openChildForm(new frmVanChuyen());
+            openChildForm(new frmNhanVienShop());
         }
 
         private void btnFeedback_Click(object sender, EventArgs e)
