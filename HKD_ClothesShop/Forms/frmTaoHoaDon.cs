@@ -51,6 +51,7 @@ namespace HKD_ClothesShop.Forms
                 FillFalcultyCombobox11(listHoaDons);
                 FillFalcultyCombobox12(listSanPham);
                 FillFalcultyCombobox111(listNhanViens);
+               
 
             }
             catch (Exception ex)
@@ -243,12 +244,13 @@ namespace HKD_ClothesShop.Forms
             foreach (var item in listCTHoaDon)
             {
                 int index = dgvCTHoaDon.Rows.Add();
-                dgvCTHoaDon.Rows[index].Cells[0].Value = item.SoHoaDon;
-                dgvCTHoaDon.Rows[index].Cells[1].Value = item.MaSanPham;
+                dgvCTHoaDon.Rows[index].Cells[1].Value = item.SoHoaDon;
+                dgvCTHoaDon.Rows[index].Cells[3].Value = item.SanPham.TenSanPham;
                 dgvCTHoaDon.Rows[index].Cells[2].Value = item.MaNhanVien;
-                dgvCTHoaDon.Rows[index].Cells[3].Value = item.SoLuongMua;
-                dgvCTHoaDon.Rows[index].Cells[4].Value = item.DonGiaBan;
-               
+                dgvCTHoaDon.Rows[index].Cells[4].Value = item.SoLuongMua;
+                dgvCTHoaDon.Rows[index].Cells[5].Value = item.DonGiaBan;
+                dgvCTHoaDon.Rows[index].Cells[0].Value = item.HoaDon.MaKhachHang;
+
             }
         }
         private void FillFalcultyCombobox11(List<HoaDon> listHoaDons)
@@ -259,7 +261,9 @@ namespace HKD_ClothesShop.Forms
         private void FillFalcultyCombobox12(List<SanPham> listSanPham)
         {
             this.cmbMaSP.DataSource = listSanPham;
+            this.cmbMaSP.DisplayMember = "TenSanPham";
             this.cmbMaSP.ValueMember = "MaSanPham";
+           
         }
         private void FillFalcultyCombobox111(List<NhanVienBanHang> listNhanViens)
         {
@@ -300,11 +304,11 @@ namespace HKD_ClothesShop.Forms
 
                         ChiTietHoaDon st = new ChiTietHoaDon();
                         st.SoHoaDon = txtSoHD.Text;
-                        st.MaSanPham = cmbMaSP.Text;
+                        st.MaSanPham = cmbMaSP.SelectedValue.ToString();
                         st.MaNhanVien = cmbMaNVs.Text;
                         st.SoLuongMua = Convert.ToInt32(txtSoLuong.Text);
                         st.DonGiaBan= Convert.ToDecimal(txtDonGia.Text);
-
+                      //  ThanhTien();
                         db.ChiTietHoaDons.Add(st);
                         db.SaveChanges();
                         frmTaoHoaDon_Load(null, null);
@@ -336,7 +340,7 @@ namespace HKD_ClothesShop.Forms
                     {
                         st.SoLuongMua = Convert.ToInt32(txtSoLuong.Text);
                         st.DonGiaBan = Convert.ToDecimal(txtDonGia.Text);
-
+                        //ThanhTien();
                         db.SaveChanges();
                         frmTaoHoaDon_Load(null, null);
                         MessageBox.Show($"Sửa chi tiết hóa đơn mã {txtSoHD.Text} thành công", "Thông báo", MessageBoxButtons.OK);
@@ -375,14 +379,20 @@ namespace HKD_ClothesShop.Forms
             int num = e.RowIndex;
             if (dgvCTHoaDon.Rows.Count > 0)
             {
-                cmbHoaDon.Text = dgvCTHoaDon.Rows[num].Cells[0].Value.ToString();
+                cmbHoaDon.Text = dgvCTHoaDon.Rows[num].Cells[1].Value.ToString();
                 cmbMaSP.Text = dgvCTHoaDon.Rows[num].Cells[1].Value.ToString();
                 cmbMaNVs.Text = dgvCTHoaDon.Rows[num].Cells[2].Value.ToString();
-                txtSoLuong.Text = dgvCTHoaDon.Rows[num].Cells[3].Value.ToString();
-                txtDonGia.Text = dgvCTHoaDon.Rows[num].Cells[4].Value.ToString();
-
+                txtSoLuong.Text = dgvCTHoaDon.Rows[num].Cells[4].Value.ToString();
+                txtDonGia.Text = dgvCTHoaDon.Rows[num].Cells[5].Value.ToString();
+                lbMaKH.Text= dgvCTHoaDon.Rows[num].Cells[0].Value.ToString();
+        //        lbThanhTien.Text = dgvCTHoaDon.Rows[num].Cells[6].Value.ToString();
             }
         }
+        /// <summary>
+        /// ////////
+        /// </summary>
+        /// <param ></param>
+        /// <param></param>
 
         private void btnSua_Click_1(object sender, EventArgs e)
         {
@@ -404,8 +414,8 @@ namespace HKD_ClothesShop.Forms
             if (dgvHoaDon.Rows.Count > 0)
             {
                 txtSoHD.Text = dgvHoaDon.Rows[num].Cells[0].Value.ToString();
-                cmbMaKH.Text = dgvHoaDon.Rows[num].Cells[1].Value.ToString();
-                cmbMaNV.Text = dgvHoaDon.Rows[num].Cells[2].Value.ToString();
+                cmbMaKH.Text = dgvHoaDon.Rows[num].Cells[2].Value.ToString();
+                cmbMaNV.Text = dgvHoaDon.Rows[num].Cells[1].Value.ToString();
                 dateTimePicker1.Text = dgvHoaDon.Rows[num].Cells[3].Value.ToString();
                 lbStatus.Text = dgvHoaDon.Rows[num].Cells[4].Value.ToString();
                 if (dgvHoaDon.Rows[num].Cells[4].Value.ToString() == "Hết sử dụng")
@@ -417,6 +427,38 @@ namespace HKD_ClothesShop.Forms
                     checkStatus.Checked = false;
                 }
             }
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbMaKH_Click(object sender, EventArgs e)
+        {
+
+        }
+        int ThanhTien()
+        {
+            if(txtSoLuong.Text != null && txtDonGia.Text !=null)
+            {
+                int dg, sl, ThanhTiens;
+                dg= Convert.ToInt32(txtDonGia.Text);
+                sl = Convert.ToInt32(txtSoLuong.Text);
+                ThanhTiens = dg * sl;
+                lbThanhTien.Text = ThanhTiens.ToString();
+            }
+            return 0;
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

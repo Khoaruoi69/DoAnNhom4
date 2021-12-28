@@ -39,7 +39,7 @@ namespace HKD_ClothesShop.Forms
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Image = global::HKD_ClothesShop.Properties.Resources.closed_sign;
             this.btnClose.Location = new System.Drawing.Point(16, 15);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(48, 44);
             this.btnClose.TabIndex = 1;
@@ -54,7 +54,7 @@ namespace HKD_ClothesShop.Forms
             this.Controls.Add(this.btnClose);
             this.Enabled = false;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmTaiChinh";
             this.Text = "Form12";
             this.ResumeLayout(false);
