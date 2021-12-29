@@ -147,7 +147,7 @@ namespace HKD_ClothesShop.Forms
             catch (Exception)
             {
 
-                throw;
+                MessageBox.Show("Đã xảy ra lỗi", "Thông báo", MessageBoxButtons.OK);
             }
 
 
@@ -159,14 +159,11 @@ namespace HKD_ClothesShop.Forms
                 if (kiemtra() == true)
                 {
                     string id = txtSoHD.Text;
-                    string ids = cmbMaKH.Text;
-                    string idss = cmbMaNV.Text;
-                    HoaDon st = db.HoaDons.Where(p => p.SoHoaDon == id && p.MaKhachHang==ids && p.MaNhanVien==idss).FirstOrDefault();
+                    HoaDon st = db.HoaDons.Where(p => p.SoHoaDon == id  ).FirstOrDefault();
                     if (st != null)
                     {
                         st.NgayLap = dateTimePicker1.Value;
                         st.Status = checkStatus.Checked;
-
                         db.SaveChanges();
                         frmTaoHoaDon_Load(null, null);
                         MessageBox.Show($"Sửa hóa đơn mã {txtSoHD.Text} thành công", "Thông báo", MessageBoxButtons.OK);
@@ -308,7 +305,7 @@ namespace HKD_ClothesShop.Forms
                         st.MaNhanVien = cmbMaNVs.Text;
                         st.SoLuongMua = Convert.ToInt32(txtSoLuong.Text);
                         st.DonGiaBan= Convert.ToDecimal(txtDonGia.Text);
-                      //  ThanhTien();
+                     
                         db.ChiTietHoaDons.Add(st);
                         db.SaveChanges();
                         frmTaoHoaDon_Load(null, null);
@@ -321,7 +318,7 @@ namespace HKD_ClothesShop.Forms
             catch (Exception)
             {
 
-                throw;
+                MessageBox.Show("Đã xảy ra lỗi", "Thông báo", MessageBoxButtons.OK);
             }
 
 
@@ -335,23 +332,33 @@ namespace HKD_ClothesShop.Forms
                     string id = cmbHoaDon.Text;
                     string ids = cmbMaSP.Text;
                     string idss = cmbMaNVs.Text;
-                    ChiTietHoaDon st = db.ChiTietHoaDons.Where(p => p.SoHoaDon == id && p.MaSanPham == ids && p.MaNhanVien == idss).FirstOrDefault();
+                    ChiTietHoaDon st = db.ChiTietHoaDons.Where(p => p.SoHoaDon == id).FirstOrDefault();
                     if (st != null)
                     {
                         st.SoLuongMua = Convert.ToInt32(txtSoLuong.Text);
                         st.DonGiaBan = Convert.ToDecimal(txtDonGia.Text);
-                        //ThanhTien();
+          
                         db.SaveChanges();
                         frmTaoHoaDon_Load(null, null);
                         MessageBox.Show($"Sửa chi tiết hóa đơn mã {txtSoHD.Text} thành công", "Thông báo", MessageBoxButtons.OK);
                     }
                 }
+              
             }
             catch (Exception)
             {
 
                 MessageBox.Show("đã xãy ra lỗi", "thông báo", MessageBoxButtons.OK);
             }
+        }
+        
+        void TinhTien()
+        {
+            int t, sl, S;
+            t = int.Parse(txtDonGia.Text);
+            sl = int.Parse(txtSoLuong.Text);
+            S = t * sl;
+            lbThanhTien.Text = S.ToString();
         }
 
         private void btnadd_Click(object sender, EventArgs e)
@@ -443,18 +450,7 @@ namespace HKD_ClothesShop.Forms
         {
 
         }
-        int ThanhTien()
-        {
-            if(txtSoLuong.Text != null && txtDonGia.Text !=null)
-            {
-                int dg, sl, ThanhTiens;
-                dg= Convert.ToInt32(txtDonGia.Text);
-                sl = Convert.ToInt32(txtSoLuong.Text);
-                ThanhTiens = dg * sl;
-                lbThanhTien.Text = ThanhTiens.ToString();
-            }
-            return 0;
-        }
+       
 
         private void label13_Click(object sender, EventArgs e)
         {
